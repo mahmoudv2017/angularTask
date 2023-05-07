@@ -1,0 +1,52 @@
+<div class="text-light py-5 curtain">
+  <h1 class="text-center header fs-2">تسجيل الخول</h1>
+  <form [formGroup]="myFormGroup" (ngSubmit)="logMeIn()" >
+
+
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        [ngClass]="{ invalid: Email!.invalid && Email!.touched , valid: Email!.valid && Email!.touched }"
+        formControlName="email"
+        class="w-100"
+        placeholder="Email"
+      />
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="password"
+        [ngClass]="{ invalid: Password!.invalid && Password!.touched , valid: Password!.valid && Password!.touched }"
+        formControlName="password"
+        class="w-100"
+        placeholder="password"
+      />
+    </div>
+
+    <h3 class="text-danger font-weight-bold text-center">{{this.status}}</h3>
+
+     <button
+        class="btn btn-success btn-block mb-4 submit_btn d-flex justify-content-center"
+        [disabled]="!myFormGroup.valid"
+        type="submit"
+      >
+        تسجيل الدخول
+      </button>
+
+    <hr />
+    <div class="text-center">
+      <p class="fs-5">او التسجيل عبر</p>
+      <button
+        type="button"
+        (click)="signInWithFB()"
+        class="btn btn-primary  mx-1"
+      >
+        F
+      </button>
+
+      <button type="button" class="btn mx-1">
+        <asl-google-signin-button size="large"> </asl-google-signin-button>
+      </button>
+    </div>
+  </form>
+</div>

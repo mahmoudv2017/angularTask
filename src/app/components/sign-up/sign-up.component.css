@@ -1,0 +1,109 @@
+form{
+  width: 50%;
+  margin: auto auto;
+  color: white;
+}
+
+input,select{
+  border-radius: 28px;
+  direction: rtl;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
+
+}
+
+.mat-icon{
+  transform: translate(10px, -2.5rem);
+}
+
+.not_matching{
+  text-align: end;
+  color: red;
+  font-weight: bolder;
+  padding-bottom: 1rem;
+}
+
+.invalid_email{
+  text-align: end;
+  color: red;
+  font-weight: bolder;
+
+}
+
+select{
+  direction: rtl;
+}
+.radio_otp{
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+input[type=text] , input[type=password]{
+  width: 100%;
+}
+
+input[type=number] {
+
+  width: 70%;
+}
+
+input[type=checkbox] {
+
+  width: 20px;
+  height: 20px;
+}
+
+select{
+  width: 28%;
+  margin-left: 2%;
+}
+
+.invalid{
+  border-color: red;
+}
+
+.valid{
+  border-color: lightgreen;
+}
+
+.submit_btn{
+  width: 20%;
+  margin: auto;
+}
+.subtitle{
+  margin-bottom: 4rem;
+}
+.header{
+  font-weight: bolder;
+}
+
+.curtain{
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.modal-backdrop{
+  z-index: 1;
+}
+
+.flag-icon {
+  display: inline-block;
+  width: 1.33333em;
+  height: 1em;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.flag-icon-us {
+  background-image: url('https://www.countryflags.io/us/flat/16.png');
+}
+.flag-icon-ca {
+  background-image: url('https://www.countryflags.io/ca/flat/16.png');
+}
+.flag-icon-gb {
+  background-image: url('https://www.countryflags.io/gb/flat/16.png');
+}
+.flag-icon-au {
+  background-image: url('https://www.countryflags.io/au/flat/16.png');
+}

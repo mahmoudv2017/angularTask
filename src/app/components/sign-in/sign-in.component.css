@@ -1,0 +1,41 @@
+.curtain{
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.invalid{
+  border-color: red;
+}
+
+.valid{
+  border-color: lightgreen;
+}
+h1{
+  padding-top: 5vh;
+  padding-bottom: 2vh;
+}
+form{
+  width: 50%;
+
+  margin: auto;
+}
+.font-weight-bold{
+  font-weight: bolder;
+}
+input{
+  border-radius: 28px;
+  direction: rtl;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
+
+}
+
+input[type=text] , input[type=password]{
+  width: 100%;
+}
+
+.submit_btn{
+  width: 20%;
+  margin: auto;
+}

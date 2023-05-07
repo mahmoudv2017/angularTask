@@ -1,0 +1,17 @@
+<h1 class="text-center" mat-dialog-title>Code Verfication</h1>
+<div mat-dialog-content class="text-center">
+  <h3>We Have sent you a code via <span class="text-danger">{{data.method}}</span></h3>
+  <p>What's your Code?</p>
+
+    <label>Enter Your Code</label>
+    <input [(ngModel)]="data.animal">
+
+    <h1>{{status}}</h1>
+
+</div>
+<div mat-dialog-actions class="d-flex justify-content-center align-items-center gap">
+  <button mat-button class="btn btn-danger" (click)="onNoClick()">Cancel</button>
+  <button mat-button class="btn btn-primary" (click)="Rescend()">Rescend Code</button>
+  <button mat-button class="btn btn-success" (click)="VerifyToken()"  >Send</button>
+
+</div>

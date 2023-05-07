@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+
+}
+
+div.mat-elevation-z8{
+  width: 100%;
+  padding-inline: 10rem;
+  margin: auto auto;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.curtain{
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+}

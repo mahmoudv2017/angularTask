@@ -1,0 +1,152 @@
+<div class="text-light py-5 curtain">
+  <h1 class="text-center header">تسجيل جديد</h1>
+  <p class="text-center subtitle">قم بالتسجيل لنتائج بحثية افضل</p>
+  <form [formGroup]="myFormGroup" >
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input
+            type="text"
+            [ngClass]="{ invalid: LastName!.invalid && LastName!.touched , valid: LastName!.valid && LastName!.touched }"
+            formControlName="lastName"
+            placeholder="الاسم الاخير"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input
+            type="text"
+            [ngClass]="{ invalid: FirstName!.invalid && FirstName!.touched , valid: FirstName!.valid && FirstName!.touched  }"
+            formControlName="firstName"
+            id="form3Example1"
+            placeholder="الاسم الاول"
+          />
+          <!-- <div *ngIf="FirstName!.invalid && FirstName!.touched">
+            error
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text"  [ngClass]="{ invalid: Email!.invalid && Email!.touched , valid: Email!.valid && Email!.touched  }" formControlName="email" placeholder="البريد الاكترونى" />
+
+          <div *ngIf="Email!.invalid && Email!.touched" class="text-danger invalid_email px-4"> email invalid</div>
+          <div *ngIf="Email!.pending">checking if email exists</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+
+          <input
+            type="number"
+            class="w-70"
+            formControlName="phone"
+            [ngClass]="{ invalid: Phone!.invalid && Phone!.touched , valid: Phone!.valid && Phone!.touched  }"
+            placeholder="رقم الجوال"
+          />
+          <select [ngClass]="{ invalid: Area_code!.invalid && Area_code!.touched , valid: Area_code!.valid && Area_code!.touched  }" formControlName="area_code" class="w-28">
+
+            <ng-template ngFor let-item [ngForOf]="countries" let-i="index" >
+              <option [value]="countries[i].dialCode" >
+                <span class="fs-2 pr-4">
+                  {{countries[i].code}}
+                </span>
+
+                {{countries[i].dialCode}}
+               </option>
+            </ng-template>
+
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input
+        type="password"
+        [type]="hide2 ? 'password' : 'text'"
+        [ngClass]="{ invalid: Password!.invalid && Password!.touched , valid: Password!.valid && Password!.touched  }"
+        formControlName="password"
+        class="w-100"
+        placeholder="كلمة السر"
+      />
+      <mat-icon matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+    </div>
+
+    <div class="form-outline ">
+      <input
+      [type]="hide ? 'password' : 'text'"
+        type="password"
+        [ngClass]="{ invalid: ConfirmPassword!.invalid && ConfirmPassword!.touched , valid: ConfirmPassword!.valid && ConfirmPassword!.touched  }"
+        formControlName="confirmPassword"
+        class="w-100"
+        placeholder="تاكيد كلمة السر"
+      />
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </div>
+
+    <div class="not_matching" *ngIf="myFormGroup.hasError('passwordMatch')">
+      Passwords must match
+    </div>
+
+    <div class="form-check d-flex justify-content-end mb-4">
+      <label class="form-check-label fs-5 px-2" for="form2Example33">
+        اوافق على كافة <span class="text-warning">الشروط و الحكام</span>
+      </label>
+      <input type="checkbox" id="form2Example33" formControlName="agreed" >
+    </div>
+
+    <div class="form-check d-flex justify-content-end mb-4">
+      <label class="form-check-label fs-5" for="otp_1">
+        <span class="text-warning">رقم الجوال </span>
+      </label>
+      <input type="radio"  value="sms" class="radio_otp"  name="verfication_method" formControlName="verfication_method" />
+
+      <label class="fs-5" for="otp_2">
+        <span class="text-warning">البريد الالكترونى</span>
+      </label>
+      <input  type="radio" value="email"  class="radio_otp" name="verfication_method" formControlName="verfication_method" />
+      <span class="fs-5" for="otp_2"> ارسال رمز التحقق من خلال </span>
+    </div>
+
+    <div>
+
+      <button
+        class="btn btn-success btn-block mb-4 submit_btn d-flex justify-content-center"
+        [disabled]="!myFormGroup.valid"
+        (click)="openDialog()"
+      >
+        تسجيل
+      </button>
+      <p class="text-center fs-5" >لديك حساب
+        <a class="text-warning" [routerLink]="['/login']"> تسجيل الدخول</a>
+      </p>
+
+    </div>
+    <hr />
+    <div class="text-center">
+      <p class="fs-5">او التسجيل عبر</p>
+      <button
+        type="button"
+        (click)="signInWithFB()"
+        class="btn btn-primary  mx-1"
+      >
+        F
+      </button>
+
+      <button type="button" class="btn mx-1">
+        <asl-google-signin-button size="large"> </asl-google-signin-button>
+      </button>
+    </div>
+  </form>
+</div>
+
+
+
+

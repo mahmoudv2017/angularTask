@@ -1,0 +1,17 @@
+<div class="home_container w-100">
+    <div class="py-5 text-light ">
+      <h1 class="fs-1 pb-5">Home Page</h1>
+
+      <!-- <img> -->
+      <img *ngIf="user.photoUrl" width="100px" [src]="user.photoUrl" />
+      <p> Provider : <span> {{user.provider}}  </span> </p>
+      <p> First Name : <span> {{user.firstName}}  </span> </p>
+      <p> Last Name : <span> {{user.lastName}} </span> </p>
+      <p *ngIf="user.name"> Name : <span> {{user.name}} </span> </p>
+      <p> Email : <span> {{user.email}} </span> </p>
+
+      <p *ngIf="user.phone"> Phone Number : <span> {{user.phone}} </span> </p>
+
+      <button class="btn btn-danger" (click)="singout()">Log Out</button>
+    </div>
+</div>
